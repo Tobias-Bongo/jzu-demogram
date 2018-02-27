@@ -23,8 +23,8 @@ var measure = (function (measure) {
     var digitalDataSnapshot;
     if (typeof data.event !== "undefined") {
       measureInterface._fired = true;
-      measureInterface._process(data);
       digitalData = measureInterface._deepMerge(digitalData, data);
+      measureInterface._process(data);
       digitalDataSnapshot = JSON.parse(JSON.stringify(digitalData));
       delete digitalDataSnapshot._log;
       debug("Event captured. Available data:");
